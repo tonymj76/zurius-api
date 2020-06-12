@@ -1,17 +1,14 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"github.com/tonymj76/zurius-api/handler"
 )
 
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "pong")
-	})
+	r.POST("/", handler.GooglePlace)
 
 	return r
 }
