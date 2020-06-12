@@ -1,0 +1,36 @@
+{"input": "hospital in Nigeria",
+  "fields":"photos,formatted_address,name,rating,opening_hours,geometry"
+}
+
+// Museum of Contemporary Art Australia
+
+{"Message":
+  {"Candidates":[
+    {
+      "formatted_address":"Entrance B, National Theatre, Iganmu, Lagos, Lagos, Lagos, Nigeria",
+      "geometry":{
+        "location":{
+          "lat":6.4799,
+          "lng":3.36776
+        },
+          "location_type":"",
+          "bounds":{
+            "northeast":{
+              "lat":0,"lng":0
+              },
+              "southwest":{"lat":0,"lng":0}
+            },
+              "viewport":{
+                "northeast":{
+                  "lat":6.481232629892721,"lng":3.369086579892723},
+                  "southwest":{"lat":6.478532970107278,"lng":3.366386920107278}
+                  },
+        "types":null
+      },
+      "name":"National Gallery of Modern Art Nga","rating":4.2
+    }
+  ],
+  "HTMLAttributions":null
+  },
+  "Success":"success"
+}
