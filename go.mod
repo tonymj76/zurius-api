@@ -1,4 +1,4 @@
-module github.com/tonymy76/zurius-api
+module github.com/tonymj76/zurius-api
 
 go 1.14
 
