@@ -3,10 +3,10 @@ package handler
 import (
 	"context"
 	"net/http"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/tonymj76/zurius-api/models"
 	"googlemaps.github.io/maps"
 )
 
@@ -31,14 +31,12 @@ func GooglePlace(c *gin.Context) {
 	var (
 		client *maps.Client
 		err    error
-		apiKey = ""
+		fields = "photos,formatted_address,name,rating,opening_hours/weekday_text, geometry"
+		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
 	)
-	place := &models.Place{}
-
-	if err := c.ShouldBindJSON(place); err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to bind request", err))
-		return
-	}
+	input := c.Query("input")
+	radius, err := strconv.Atoi(c.Query("radius"))
+	check(c, err)
 
 	client, err = maps.NewClient(maps.WithAPIKey(apiKey))
 	if err != nil {
@@ -47,41 +45,15 @@ func GooglePlace(c *gin.Context) {
 	}
 
 	r := &maps.FindPlaceFromTextRequest{
-		Input:     place.Input,
+		Input:     input,
 		InputType: maps.FindPlaceFromTextInputTypeTextQuery,
 	}
 
-	if place.LocationBias != "" {
-		lb, err := maps.ParseFindPlaceFromTextLocationBiasType(place.LocationBias)
-		if err != nil {
-			c.JSON(http.StatusBadRequest, ginH("failed to get location bias", err))
-			return
-		}
-		r.LocationBias = lb
-		switch lb {
-		case maps.FindPlaceFromTextLocationBiasPoint:
-			l, err := maps.ParseLatLng(place.Point)
-			check(c, err)
-			r.LocationBiasPoint = &l
-		case maps.FindPlaceFromTextLocationBiasCircular:
-			l, err := maps.ParseLatLng(place.Center)
-			check(c, err)
-			r.LocationBiasCenter = &l
-			r.LocationBiasRadius = place.Radius
-		case maps.FindPlaceFromTextLocationBiasRectangular:
-			sw, err := maps.ParseLatLng(place.SouthWest)
-			check(c, err)
-			r.LocationBiasSouthWest = &sw
-			ne, err := maps.ParseLatLng(place.NorthEast)
-			check(c, err)
-			r.LocationBiasNorthEast = &ne
-		}
-	}
-
-	if place.Fields != "" {
-		f, err := parseFields(place.Fields)
-		check(c, err)
-		r.Fields = f
+	f, err := parseFields(fields)
+	check(c, err)
+	r.Fields = f
+	if radius != 0 {
+		r.LocationBiasRadius = radius
 	}
 
 	resp, err := client.FindPlaceFromText(context.Background(), r)

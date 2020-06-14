@@ -1,8 +1,4 @@
-{"input": "hospital in Nigeria",
-  "fields":"photos,formatted_address,name,rating,opening_hours,geometry"
-}
-
-// Museum of Contemporary Art Australia
+{"input": "hospital in Nigeria", "radius": 4}
 
 {"Message":
   {"Candidates":[
