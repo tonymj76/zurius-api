@@ -16,8 +16,7 @@ import (
 var api string
 
 func init() {
-	api = os.Getenv(APIKEY)
-	SetMode(api)
+	api = os.Getenv("APIKEY")
 }
 
 func ginH(msg, in interface{}) gin.H {
