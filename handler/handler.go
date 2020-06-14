@@ -32,7 +32,7 @@ func GooglePlace(c *gin.Context) {
 		client *maps.Client
 		err    error
 		fields = "photos,formatted_address,name,rating,opening_hours/weekday_text, geometry"
-		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
+		apiKey = ""
 	)
 	input := c.Query("input")
 	radius, err := strconv.Atoi(c.Query("radius"))
