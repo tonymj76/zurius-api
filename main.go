@@ -8,7 +8,7 @@ import (
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.POST("/", handler.GooglePlace)
+	r.GET("/", handler.GooglePlace)
 
 	return r
 }
