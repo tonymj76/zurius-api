@@ -2,6 +2,7 @@ package handler
 
 import (
 	"context"
+	"errors"
 	"net/http"
 	"strconv"
 	"strings"
@@ -31,12 +32,18 @@ func GooglePlace(c *gin.Context) {
 	var (
 		client *maps.Client
 		err    error
-		fields = "photos,formatted_address,name,rating,opening_hours/weekday_text, geometry"
-		apiKey = ""
+		fields = "photos,formatted_address,name,rating"
+		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
 	)
 	input := c.Query("input")
 	radius, err := strconv.Atoi(c.Query("radius"))
-	check(c, err)
+	if err != nil {
+		radius = 0
+	}
+	if input == "undefined" {
+		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
+		return
+	}
 
 	client, err = maps.NewClient(maps.WithAPIKey(apiKey))
 	if err != nil {
@@ -60,6 +67,7 @@ func GooglePlace(c *gin.Context) {
 	check(c, err)
 
 	c.JSON(http.StatusOK, ginH(resp, "success"))
+	return
 }
 
 func parseFields(fields string) ([]maps.PlaceSearchFieldMask, error) {
