@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"os"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -28,6 +30,10 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
 	r := setupRouter()
-	r.Run(":8080")
+	r.Run(":" + port)
 }

@@ -3,7 +3,9 @@ package handler
 import (
 	"context"
 	"errors"
+	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 
@@ -29,12 +31,16 @@ func check(c *gin.Context, err error) {
 
 //GooglePlace _
 func GooglePlace(c *gin.Context) {
+	api := os.Getenv("APIKEY")
 	var (
 		client *maps.Client
 		err    error
 		fields = "photos,formatted_address,name,rating"
-		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
+		apiKey = api
 	)
+	if apiKey == "" {
+		log.Fatal("there must be a api key")
+	}
 	input := c.Query("input")
 	radius, err := strconv.Atoi(c.Query("radius"))
 	if err != nil {
