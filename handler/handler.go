@@ -13,6 +13,13 @@ import (
 	"googlemaps.github.io/maps"
 )
 
+var api string
+
+func init() {
+	api = os.Getenv(APIKEY)
+	SetMode(api)
+}
+
 func ginH(msg, in interface{}) gin.H {
 	switch in.(type) {
 	case error:
@@ -31,7 +38,6 @@ func check(c *gin.Context, err error) {
 
 //GooglePlace _
 func GooglePlace(c *gin.Context) {
-	api := os.Getenv("APIKEY")
 	var (
 		client *maps.Client
 		err    error
