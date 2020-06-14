@@ -3,21 +3,13 @@ package handler
 import (
 	"context"
 	"errors"
-	"log"
 	"net/http"
-	"os"
 	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
 	"googlemaps.github.io/maps"
 )
-
-var api string
-
-func init() {
-	api = os.Getenv("APIKEY")
-}
 
 func ginH(msg, in interface{}) gin.H {
 	switch in.(type) {
@@ -41,11 +33,8 @@ func GooglePlace(c *gin.Context) {
 		client *maps.Client
 		err    error
 		fields = "photos,formatted_address,name,rating"
-		apiKey = api
+		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
 	)
-	if apiKey == "" {
-		log.Fatal("there must be a api key")
-	}
 	input := c.Query("input")
 	radius, err := strconv.Atoi(c.Query("radius"))
 	if err != nil {
