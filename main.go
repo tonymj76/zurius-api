@@ -13,7 +13,7 @@ import (
 func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://zurius-client.herokuapp.com"},
+		AllowOrigins:     []string{"https://zurius-client.herokuapp.com", "http://localhost:3000/"},
 		AllowMethods:     []string{"GET"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Type"},
