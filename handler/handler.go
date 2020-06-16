@@ -28,18 +28,20 @@ func check(c *gin.Context, err error) {
 
 //RequestToTomTom _
 func RequestToTomTom(c *gin.Context) {
+	var url string
 	input := c.Query("input")
 	radius := c.Query("radius")
+	APIKey := os.Getenv("APIKEY")
 
 	if input == "undefined" {
 		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
 		return
 	}
-	if radius == "undefined" {
-		radius = ""
+	if radius == "undefined" || radius == "" {
+		url = fmt.Sprintf("https://api.tomtom.com/search/2/search/%s.json?key=%s&countrySet=NG&lat=37.8085&lon=-122.423", input, APIKey)
+	} else {
+		url = fmt.Sprintf("https://api.tomtom.com/search/2/search/%s.json?key=%s&countrySet=NG&lat=37.8085&lon=-122.423&radius=%s", input, APIKey, radius)
 	}
-	APIKey := os.Getenv("APIKEY")
-	url := fmt.Sprintf("https://api.tomtom.com/search/2/search/%s.json?key=%s&countrySet=NG&lat=37.8085&lon=-122.423&radius=%s", input, APIKey, radius)
 	client := http.Client{
 		Timeout: time.Duration(10 * time.Second),
 	}
