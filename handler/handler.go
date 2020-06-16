@@ -1,14 +1,13 @@
 package handler
 
 import (
-	"context"
 	"errors"
+	"fmt"
 	"net/http"
-	"strconv"
-	"strings"
+	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
-	"googlemaps.github.io/maps"
 )
 
 func ginH(msg, in interface{}) gin.H {
@@ -27,57 +26,28 @@ func check(c *gin.Context, err error) {
 	}
 }
 
-//GooglePlace _
-func GooglePlace(c *gin.Context) {
-	var (
-		client *maps.Client
-		err    error
-		fields = "photos,formatted_address,name,rating"
-		apiKey = "AIzaSyDwABmakYiNi5jINWs0Y6fuZCPmEO1JF-o"
-	)
+//RequestToTomTom _
+func RequestToTomTom(c *gin.Context) {
 	input := c.Query("input")
-	radius, err := strconv.Atoi(c.Query("radius"))
-	if err != nil {
-		radius = 0
-	}
+	radius := c.Query("radius")
+
 	if input == "undefined" {
 		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
 		return
 	}
-
-	client, err = maps.NewClient(maps.WithAPIKey(apiKey))
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to create new client", err))
-		return
+	if radius == "undefined" {
+		radius = ""
 	}
-
-	r := &maps.FindPlaceFromTextRequest{
-		Input:     input,
-		InputType: maps.FindPlaceFromTextInputTypeTextQuery,
+	APIKey := os.Getenv("APIKEY")
+	url := fmt.Sprintf("https://api.tomtom.com/search/2/search/%s.json?key=%s&countrySet=NG&lat=37.8085&lon=-122.423&radius=%s", input, APIKey, radius)
+	client := http.Client{
+		Timeout: time.Duration(10 * time.Second),
 	}
-
-	f, err := parseFields(fields)
+	request, err := http.NewRequest("GET", url, nil)
+	request.Header.Set("Content-type", "application/json")
 	check(c, err)
-	r.Fields = f
-	if radius != 0 {
-		r.LocationBiasRadius = radius
-	}
-
-	resp, err := client.FindPlaceFromText(context.Background(), r)
+	resp, err := client.Do(request)
 	check(c, err)
-
 	c.JSON(http.StatusOK, ginH(resp, "success"))
 	return
-}
-
-func parseFields(fields string) ([]maps.PlaceSearchFieldMask, error) {
-	var res []maps.PlaceSearchFieldMask
-	for _, s := range strings.Split(fields, ",") {
-		f, err := maps.ParsePlaceSearchFieldMask(s)
-		if err != nil {
-			return nil, err
-		}
-		res = append(res, f)
-	}
-	return res, nil
 }

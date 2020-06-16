@@ -7,8 +7,16 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/tonymj76/zurius-api/handler"
 )
+
+// init gets called before the main function
+func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+}
 
 func setupRouter() *gin.Engine {
 	r := gin.Default()
@@ -24,7 +32,7 @@ func setupRouter() *gin.Engine {
 		MaxAge: 12 * time.Hour,
 	}))
 
-	r.GET("/", handler.GooglePlace)
+	r.GET("/api/v1", handler.RequestToTomTom)
 
 	return r
 }
@@ -32,7 +40,7 @@ func setupRouter() *gin.Engine {
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		log.Println("$PORT must be set")
 	}
 	r := setupRouter()
 	r.Run(":" + port)
