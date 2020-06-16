@@ -1,0 +1,691 @@
+{
+   "results": [
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Cemetery Street, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Ebute-Metta",
+         "streetName": "Cemetery Street"
+       },
+       "dist": 12560347.15526689,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.4855,
+             "lon": 3.38578
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA1MDg0MTOhY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000508413-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Lagos Clinic"
+       },
+       "position": {
+         "lat": 6.48554,
+         "lon": 3.38587
+       },
+       "score": 3.827739953994751,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.48464,
+           "lon": 3.38678
+         },
+         "topLeftPoint": {
+           "lat": 6.48644,
+           "lon": 3.38496
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Moshood Abiola Way, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Iponri",
+         "streetName": "Moshood Abiola Way"
+       },
+       "dist": 12559600.586040735,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.48178,
+             "lon": 3.3724
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0NDI1ODahY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000442586-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Clinic"
+       },
+       "position": {
+         "lat": 6.48193,
+         "lon": 3.37241
+       },
+       "score": 3.827739953994751,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.48103,
+           "lon": 3.37332
+         },
+         "topLeftPoint": {
+           "lat": 6.48283,
+           "lon": 3.3715
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Saint Finbars College Road, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Akoka",
+         "streetName": "Saint Finbars College Road"
+       },
+       "dist": 12556802.771778991,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.53369,
+             "lon": 3.39011
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0NzAzOTehY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000470397-NG",
+       "poi": {
+         "categories": [
+           "commercial building"
+         ],
+         "categorySet": [
+           {
+             "id": 9382
+           }
+         ],
+         "classifications": [
+           {
+             "code": "COMMERCIAL_BUILDING",
+             "names": [
+               {
+                 "name": "commercial building",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Executive Plaza"
+       },
+       "position": {
+         "lat": 6.53391,
+         "lon": 3.39002
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.53301,
+           "lon": 3.39093
+         },
+         "topLeftPoint": {
+           "lat": 6.53481,
+           "lon": 3.38911
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Adeniran Ogunsanya Street, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Iganmu",
+         "streetName": "Adeniran Ogunsanya Street"
+       },
+       "dist": 12557280.767267441,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.49703,
+             "lon": 3.35776
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA1MDUwODChY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000505080-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Omed Clinic"
+       },
+       "position": {
+         "lat": 6.49702,
+         "lon": 3.35791
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.49612,
+           "lon": 3.35882
+         },
+         "topLeftPoint": {
+           "lat": 6.49792,
+           "lon": 3.357
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Olorogun Street, Lagos Island, Lagos",
+         "localName": "Lagos Island",
+         "municipality": "Lagos Island",
+         "municipalitySubdivision": "Lagos",
+         "streetName": "Olorogun Street"
+       },
+       "dist": 12562785.151290132,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.46153,
+             "lon": 3.39237
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA1MDU5MTahY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000505916-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Hospital or Clinic"
+       },
+       "position": {
+         "lat": 6.46149,
+         "lon": 3.3926
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.46059,
+           "lon": 3.39351
+         },
+         "topLeftPoint": {
+           "lat": 6.46239,
+           "lon": 3.39169
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Barikisu Iyede Street, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Onike",
+         "streetName": "Barikisu Iyede Street"
+       },
+       "dist": 12557606.6594592,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.51519,
+             "lon": 3.38181
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0MzczNjChY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000437360-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Onitiri Clinic"
+       },
+       "position": {
+         "lat": 6.51457,
+         "lon": 3.38038
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.51367,
+           "lon": 3.38129
+         },
+         "topLeftPoint": {
+           "lat": 6.51547,
+           "lon": 3.37947
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Ebute-Metta"
+       },
+       "dist": 12560844.946358161,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.47709,
+             "lon": 3.3837
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0NTkzMzmhY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000459339-NG",
+       "poi": {
+         "categories": [
+           "health care service",
+           "personal care facility"
+         ],
+         "categorySet": [
+           {
+             "id": 9663003
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HEALTH_CARE_SERVICE",
+             "names": [
+               {
+                 "name": "health care service",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "personal care facility",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Bambo Clinic"
+       },
+       "position": {
+         "lat": 6.47741,
+         "lon": 3.3839
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.47651,
+           "lon": 3.38481
+         },
+         "topLeftPoint": {
+           "lat": 6.47831,
+           "lon": 3.38299
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Jebba Street, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Ebute-Metta",
+         "streetName": "Jebba Street"
+       },
+       "dist": 12560379.034524625,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.48424,
+             "lon": 3.38478
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0OTU2MTKhY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000495612-NG",
+       "poi": {
+         "categories": [
+           "health care service",
+           "personal care facility"
+         ],
+         "categorySet": [
+           {
+             "id": 9663003
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HEALTH_CARE_SERVICE",
+             "names": [
+               {
+                 "name": "health care service",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "personal care facility",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Ketu Clinic"
+       },
+       "position": {
+         "lat": 6.48413,
+         "lon": 3.38482
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.48323,
+           "lon": 3.38573
+         },
+         "topLeftPoint": {
+           "lat": 6.48503,
+           "lon": 3.38391
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Doherty Street, Lagos Island, Lagos",
+         "localName": "Lagos Island",
+         "municipality": "Lagos Island",
+         "municipalitySubdivision": "Lagos",
+         "streetName": "Doherty Street"
+       },
+       "dist": 12562339.725033615,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.46015,
+             "lon": 3.38565
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0Mjk1NzKhY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000429572-NG",
+       "poi": {
+         "categories": [
+           "general",
+           "hospital/polyclinic"
+         ],
+         "categorySet": [
+           {
+             "id": 7321002
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HOSPITAL_POLYCLINIC",
+             "names": [
+               {
+                 "name": "general",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "hospital/polyclinic",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Hospital or Clinic"
+       },
+       "position": {
+         "lat": 6.46027,
+         "lon": 3.38554
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.45937,
+           "lon": 3.38645
+         },
+         "topLeftPoint": {
+           "lat": 6.46117,
+           "lon": 3.38463
+         }
+       }
+     },
+     {
+       "address": {
+         "country": "Nigéria",
+         "countryCode": "NG",
+         "countryCodeISO3": "NGA",
+         "countrySubdivision": "Lagos",
+         "freeformAddress": "Moshood Abiola Way, Lagos Mainland, Lagos",
+         "localName": "Lagos Mainland",
+         "municipality": "Lagos Mainland",
+         "municipalitySubdivision": "Oyingbo",
+         "streetName": "Moshood Abiola Way"
+       },
+       "dist": 12559823.680279687,
+       "entryPoints": [
+         {
+           "position": {
+             "lat": 6.48172,
+             "lon": 3.37501
+           },
+           "type": "main"
+         }
+       ],
+       "id": "g6JpZK81NjYwMDkwMDA0NjMzMzehY6NOR0GhdqdVbmlmaWVk",
+       "info": "search:ta:566009000463337-NG",
+       "poi": {
+         "categories": [
+           "health care service",
+           "personal care facility"
+         ],
+         "categorySet": [
+           {
+             "id": 9663003
+           }
+         ],
+         "classifications": [
+           {
+             "code": "HEALTH_CARE_SERVICE",
+             "names": [
+               {
+                 "name": "health care service",
+                 "nameLocale": "en-US"
+               },
+               {
+                 "name": "personal care facility",
+                 "nameLocale": "en-US"
+               }
+             ]
+           }
+         ],
+         "name": "Kemsor Clinic"
+       },
+       "position": {
+         "lat": 6.48163,
+         "lon": 3.375
+       },
+       "score": 3.8078999519348145,
+       "type": "POI",
+       "viewport": {
+         "btmRightPoint": {
+           "lat": 6.48073,
+           "lon": 3.37591
+         },
+         "topLeftPoint": {
+           "lat": 6.48253,
+           "lon": 3.37409
+         }
+       }
+     }
+   ],
+   "summary": {
+     "fuzzyLevel": 2,
+     "geoBias": {
+       "lat": 37.8085,
+       "lon": -122.423
+     },
+     "numResults": 10,
+     "offset": 0,
+     "query": "lagos executive cardiovascular clinic",
+     "queryTime": 50,
+     "queryType": "NON_NEAR",
+     "totalResults": 10
+   }
+ }
