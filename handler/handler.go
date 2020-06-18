@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"time"
@@ -43,7 +42,6 @@ func RequestToTomTom(c *gin.Context) {
 	input := c.Query("input")
 	radius := c.Query("radius")
 	APIKey := os.Getenv("APIKEY")
-	log.Println("DFDFEDFDE------------------------------s")
 
 	if input == "undefined" {
 		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
