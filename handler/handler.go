@@ -37,7 +37,7 @@ func RequestToTomTom(c *gin.Context) {
 	APIKey := os.Getenv("APIKEY")
 
 	if input == "undefined" {
-		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
+		c.JSON(http.StatusBadRequest, ginH("Failed", errors.New("you need inputs")))
 		return
 	}
 	if radius == "undefined" || radius == "" {
@@ -51,16 +51,16 @@ func RequestToTomTom(c *gin.Context) {
 	request, err := http.NewRequest("GET", url, nil)
 	request.Header.Set("Content-type", "application/json")
 	if err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to fetch request", err))
+		c.JSON(http.StatusBadRequest, ginH("Failed to fetch request", err))
 		return
 	}
 	resp, err := client.Do(request)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to fetch repsonse", err))
+		c.JSON(http.StatusBadRequest, ginH("Failed to fetch repsonse", err))
 		return
 	}
 	if err := json.NewDecoder(resp.Body).Decode(&location); err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to decode response", err))
+		c.JSON(http.StatusBadRequest, ginH("Failed to decode response", err))
 		return
 	}
 	c.JSON(http.StatusOK, location)
