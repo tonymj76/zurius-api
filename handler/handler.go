@@ -26,13 +26,6 @@ func ginH(msg, in interface{}) gin.H {
 	}
 }
 
-func check(c *gin.Context, err error) {
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to fetch request", err))
-		return
-	}
-}
-
 //RequestToTomTom _
 func RequestToTomTom(c *gin.Context) {
 	var (
@@ -57,10 +50,19 @@ func RequestToTomTom(c *gin.Context) {
 	}
 	request, err := http.NewRequest("GET", url, nil)
 	request.Header.Set("Content-type", "application/json")
-	check(c, err)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ginH("failed to fetch request", err))
+		return
+	}
 	resp, err := client.Do(request)
-	err = json.NewDecoder(resp.Body).Decode(&location)
-	check(c, err)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ginH("failed to fetch repsonse", err))
+		return
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&location); err != nil {
+		c.JSON(http.StatusBadRequest, ginH("failed to fetch request", err))
+		return
+	}
 	c.JSON(http.StatusOK, location)
 	return
 }
