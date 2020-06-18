@@ -1,14 +1,22 @@
 package handler
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
 )
+
+//Location _
+type Location struct {
+	Results []interface{}
+	Summary map[string]interface{}
+}
 
 func ginH(msg, in interface{}) gin.H {
 	switch in.(type) {
@@ -28,10 +36,14 @@ func check(c *gin.Context, err error) {
 
 //RequestToTomTom _
 func RequestToTomTom(c *gin.Context) {
-	var url string
+	var (
+		url      string
+		location = Location{}
+	)
 	input := c.Query("input")
 	radius := c.Query("radius")
 	APIKey := os.Getenv("APIKEY")
+	log.Println("DFDFEDFDE------------------------------s")
 
 	if input == "undefined" {
 		c.JSON(http.StatusBadRequest, ginH("failed", errors.New("you need inputs")))
@@ -49,7 +61,8 @@ func RequestToTomTom(c *gin.Context) {
 	request.Header.Set("Content-type", "application/json")
 	check(c, err)
 	resp, err := client.Do(request)
+	err = json.NewDecoder(resp.Body).Decode(&location)
 	check(c, err)
-	c.JSON(http.StatusOK, ginH(resp, "success"))
+	c.JSON(http.StatusOK, location)
 	return
 }
