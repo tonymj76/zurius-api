@@ -17,7 +17,8 @@ func init() {
 	}
 }
 
-// var url = "https://zurius-client.herokuapp.com"
+var url = "https://zurius-client.herokuapp.com"
+
 // var urlx = "http://localhost:3000"
 
 func setupRouter() *gin.Engine {
@@ -33,7 +34,7 @@ func setupRouter() *gin.Engine {
 	// 	MaxAge: 12 * time.Hour,
 	// }))
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"*"}
+	config.AllowOrigins = []string{urlx}
 	r.Use(cors.New(config))
 	r.GET("/", handler.RequestToTomTom)
 	// r.GET("/", func(c *gin.Context) {
