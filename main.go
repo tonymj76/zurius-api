@@ -37,12 +37,6 @@ func setupRouter() *gin.Engine {
 	config.AllowOrigins = []string{"*"}
 	r.Use(cors.New(config))
 	r.GET("/", handler.RequestToTomTom)
-	// r.GET("/", func(c *gin.Context) {
-	// 	c.JSON(200, gin.H{
-	// 		"message": "pong",
-	// 	})
-	// })
-
 	return r
 }
 
