@@ -46,7 +46,7 @@ func RequestToTomTom(c *gin.Context) {
 		url = fmt.Sprintf("https://api.tomtom.com/search/2/search/%s.json?key=%s&countrySet=NG&lat=37.8085&lon=-122.423&radius=%s", input, APIKey, radius)
 	}
 	client := http.Client{
-		Timeout: time.Duration(10 * time.Second),
+		Timeout: time.Duration(15 * time.Second),
 	}
 	request, err := http.NewRequest("GET", url, nil)
 	request.Header.Set("Content-type", "application/json")
@@ -60,7 +60,7 @@ func RequestToTomTom(c *gin.Context) {
 		return
 	}
 	if err := json.NewDecoder(resp.Body).Decode(&location); err != nil {
-		c.JSON(http.StatusBadRequest, ginH("failed to fetch request", err))
+		c.JSON(http.StatusBadRequest, ginH("failed to decode response", err))
 		return
 	}
 	c.JSON(http.StatusOK, location)
