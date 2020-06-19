@@ -64,8 +64,9 @@ func RequestToTomTom(c *gin.Context) {
 		IndentionStep: 2,
 	}
 	api := config.Froze()
+
 	if err := api.NewDecoder(resp.Body).Decode(&location); err != nil {
-		c.JSON(http.StatusBadRequest, ginH("Failed to decode response", err))
+		c.JSON(http.StatusBadRequest, ginH(resp.Body, err))
 		return
 	}
 	c.JSON(http.StatusOK, location)
