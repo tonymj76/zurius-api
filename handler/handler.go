@@ -7,9 +7,8 @@ import (
 	"os"
 	"time"
 
-	jsoniter "github.com/json-iterator/go"
-
 	"github.com/gin-gonic/gin"
+	jsoniter "github.com/json-iterator/go"
 )
 
 //Location _
@@ -60,7 +59,12 @@ func RequestToTomTom(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, ginH("Failed to fetch repsonse", err))
 		return
 	}
-	if err := jsoniter.NewDecoder(resp.Body).Decode(&location); err != nil {
+	config := jsoniter.Config{
+		EscapeHTML:    true,
+		IndentionStep: 2,
+	}
+	api := config.Froze()
+	if err := api.NewDecoder(resp.Body).Decode(&location); err != nil {
 		c.JSON(http.StatusBadRequest, ginH("Failed to decode response", err))
 		return
 	}
