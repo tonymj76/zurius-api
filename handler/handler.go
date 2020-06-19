@@ -1,12 +1,13 @@
 package handler
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
 	"os"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
 
 	"github.com/gin-gonic/gin"
 )
@@ -59,7 +60,7 @@ func RequestToTomTom(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, ginH("Failed to fetch repsonse", err))
 		return
 	}
-	if err := json.NewDecoder(resp.Body).Decode(&location); err != nil {
+	if err := jsoniter.NewDecoder(resp.Body).Decode(&location); err != nil {
 		c.JSON(http.StatusBadRequest, ginH("Failed to decode response", err))
 		return
 	}
